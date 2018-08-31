@@ -1001,3 +1001,29 @@ Processing by PostsController#create as HTML
   [1m[35m (2.2ms)[0m  commit transaction
 Redirected to http://165.227.16.205:39678/posts/6
 Completed 302 Found in 9ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/6" for 192.101.73.50 at 2018-08-31 18:30:59 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 11.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/6/edit" for 192.101.73.50 at 2018-08-31 18:31:02 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered posts/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for 192.101.73.50 at 2018-08-31 18:31:05 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OCKwg6asHBESYlov7IN9GSnwYPryyQCjbLv/U42P+BAmdghRmZznZ9k+6D3W0+Vdjgq1IfDDjYUV6XzFAmwgWA==", "title"=>"test1", "description"=>"asd1", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "test1"], ["description", "asd1"], ["created_at", "2018-08-31 18:31:05.795652"], ["updated_at", "2018-08-31 18:31:05.795652"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.16.205:39678/posts/7
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
